@@ -108,6 +108,8 @@ def unpack_can_buffer(dat):
 def ensure_version(desc, lib_field, panda_field, fn):
   @wraps(fn)
   def wrapper(self, *args, **kwargs):
+    if self._disable_checks:
+      return fn(self, *args, **kwargs)
     lib_version = getattr(self, lib_field)
     panda_version = getattr(self, panda_field)
     if lib_version != panda_version:
