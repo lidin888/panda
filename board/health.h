@@ -26,9 +26,6 @@ struct __attribute__((packed)) health_t {
   uint16_t sbu1_voltage_mV;
   uint16_t sbu2_voltage_mV;
   uint8_t som_reset_triggered;
-  uint16_t sound_output_level_pkt;
-  uint8_t controls_allowed_lateral_pkt;
-  uint8_t controls_allowed_longitudinal_pkt;
 };
 
 typedef struct __attribute__((packed)) {

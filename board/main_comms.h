@@ -42,11 +42,6 @@ static int get_health_pkt(void *dat) {
 
   health->som_reset_triggered = bootkick_reset_triggered;
 
-  health->sound_output_level_pkt = sound_output_level;
-
-  health->controls_allowed_lateral_pkt = controls_allowed || controls_allowed_lateral;
-  health->controls_allowed_longitudinal_pkt = controls_allowed;
-
   return sizeof(*health);
 }
 
