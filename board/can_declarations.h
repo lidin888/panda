@@ -1,6 +1,7 @@
 #pragma once
 
 // bump this when changing the CAN packet
+#ifndef CAN_PACKET_VERSION
 #define CAN_PACKET_VERSION 4
 
 #define CANPACKET_HEAD_SIZE 6U
@@ -22,3 +23,5 @@ typedef struct {
 #define GET_BUS(msg) ((msg)->bus)
 #define GET_LEN(msg) (dlc_to_len[(msg)->data_len_code])
 #define GET_ADDR(msg) ((msg)->addr)
+
+#endif  // CAN_PACKET_VERSION
