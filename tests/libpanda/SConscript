@@ -26,7 +26,12 @@ env = Environment(
 if system == "Darwin":
   env.PrependENVPath('PATH', '/opt/homebrew/bin')
 
-if GetOption('ubsan'):
+try:
+  ubsan = GetOption('ubsan')
+except AttributeError:
+  ubsan = False
+
+if ubsan:
   flags = [
     "-fsanitize=undefined",
     "-fno-sanitize-recover=undefined",
